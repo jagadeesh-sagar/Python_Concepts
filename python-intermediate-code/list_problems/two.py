@@ -7,7 +7,7 @@ Move all zeros to end of list - [0,1,0,3,12] → [1,3,12,0,0]
 [0, -1, 0, -3, 5]
 
 '''
-
+#  1,3,12 (l),0,0
 def zero_end(list1:list)->list:
 
     l=0
@@ -57,7 +57,7 @@ def Rmv_duplicates(arr:list[int])->list[int]:
     return l+1,arr
 
 
-# print(Rmv_duplicates(arr=[0,0,0,1,1,1,2,2,3,3,4]))
+print(Rmv_duplicates(arr=[0,0,0,1,1,1,2,2,3,3,4]))
 
 '''
 👉 Partition array (even/odd, negatives/positives)
@@ -77,7 +77,7 @@ def odd_even(a:list)->list:  # chatgpt says that this swap caues issues so use l
             l+=1
     return a
 
-print(odd_even(a=[4,6,8,-2]))
+# print(odd_even(a=[4,6,8,-2]))
 
 
 # ✅ 2. Stable Partition (order preserved — advanced)
