@@ -55,13 +55,14 @@ def longest_no_repeat(stri):
     for R,char in enumerate(stri):
         if char in seen and seen[char]>=left:
             left=seen[char]+1
+        print(R,char)
             
         seen[char]=R
         best=max(best,R-left+1)
-    print(stri[::best])
+    print(stri[::best],left,best)
 
 
-# longest_no_repeat(stri='abcabcbb')
+longest_no_repeat(stri='abcabcbb')
 # ////////////////////////////////////////////
 
 '''
@@ -84,6 +85,6 @@ def string_compression(name:str):
 
     return new_string
 
-print(string_compression(name='aaabbcccc'))
+# print(string_compression(name='aaabbcccc'))
 
 # ///////////////////////////////////////
