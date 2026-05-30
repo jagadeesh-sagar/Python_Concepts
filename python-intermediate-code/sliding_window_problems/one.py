@@ -9,7 +9,7 @@ def consecutive_elements(num_list:list,k:int)->int:
 
     count,sum_list,left=0,0,0
 
-    max_sum=sum(num_list[:k]) # i used this so that it can handle alll negative numbers too
+    max_sum=sum(num_list[:k]) # i used this so that it can handle all negative numbers too
     # max_sum = float('-inf') start with infinite negative
 
     for i in num_list:

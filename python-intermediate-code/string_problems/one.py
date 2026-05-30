@@ -32,37 +32,41 @@ def permute(chars, l, r, result):
         return
 
     for i in range(l, r + 1):
+        print(i,l)
         chars[l], chars[i] = chars[i], chars[l]
         permute(chars, l + 1, r, result)
         chars[l], chars[i] = chars[i], chars[l]  # backtrack
 
 
-# s = "abc"
-# result = []
-# permute(list(s), 0, len(s) - 1, result)
-# print(result)
+s = "abc"
+result = []
+permute(list(s), 0, len(s) - 1, result)
+print(result)
 
 # /////////////////////////////////////////
 '''
 Longest substring without repeating characters
 '''
 
-def longest_no_repeat(stri):
+def longest_no_repeat(s):
     seen:dict={}
     left=0
     best=0
+    if len(s)==0:
+        return 0
 
-    for R,char in enumerate(stri):
+    for R,char in enumerate(s):
+        
         if char in seen and seen[char]>=left:
             left=seen[char]+1
         print(R,char)
             
         seen[char]=R
         best=max(best,R-left+1)
-    print(stri[::best],left,best)
+    # print(s[::best],left,best)
 
 
-longest_no_repeat(stri='abcabcbb')
+longest_no_repeat(s=' ')
 # ////////////////////////////////////////////
 
 '''

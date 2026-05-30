@@ -72,7 +72,7 @@ def parentheses_stack_2(string1:str)->bool:
             stack.append(ch)
     return len(stack)==0
 
-if (parentheses_stack_2(string1='([}])')):
+if (parentheses_stack_2(string1="([])")):
     print('balanced parenthesis')
 else:
     print('not balanced parenthesis')

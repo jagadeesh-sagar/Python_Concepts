@@ -26,3 +26,4 @@ def max_sum(arr:list):
     print(max_so_far,start_index,end_index)
        
 max_sum(arr=[-2,1,-3,4,-1,2,1,-5,4])
+
