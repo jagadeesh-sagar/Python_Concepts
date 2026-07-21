@@ -105,7 +105,6 @@ def canJump(nums:list):
 
 '''
 
-
 def canJump2(nums:list):
 
     l,r=0,nums[0]

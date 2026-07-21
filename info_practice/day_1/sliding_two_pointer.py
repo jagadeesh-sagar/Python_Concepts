@@ -376,10 +376,10 @@ def most_water(nums:list[int])->int:
 
         max_volume=max(max_volume,volume)
 
-        if nums[left]>nums[right]:
-            right-=1
-        else:
+        if nums[left]<nums[right]:
             left+=1
+        else:
+            right-=1
         print(height,volume,max_volume)
     print(max_volume)
 

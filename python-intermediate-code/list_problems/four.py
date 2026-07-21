@@ -24,7 +24,7 @@ def two_sum(arr:list[int],target:int)->list[int]:
 # print(two_sum(arr=[3,2,4],target=6))
 
 
-def three_sum(arr,target):
+def three_sum(nums:list[int],target):
     '''
    [-2,-1,0,1,2]->[[-2,0,2], [-1,0,1]]
 
@@ -34,43 +34,36 @@ def three_sum(arr,target):
 
     '''
 
-    a=sorted(arr)
-    # print(a)
-    c=[]
-    n=len(a)
+    a=sorted(nums)
+    l=0
+    n=len(nums)
+    result=[]
+    
 
-
-    for i in range(len(a)): 
-       
-        if i > 0 and arr[i] == arr[i - 1]:
+    for i in range(len(nums)):
+        if i>0 and a[i]==a[i-1]:
             continue
         l=i+1
         r=n-1
 
         while(l<r):
- 
-          two_sum=a[l]+a[r]
+            total=a[i]+a[l]+a[r]
+            if total==target:
+                result.append([a[i],a[l],a[r]])
 
-          if two_sum==-a[i]:
-            c.append([a[i],a[l],a[r]])
-            l=l+1
-            r=r-1
-   
-            # skip duplicates for left
-            while  l<r and a[l]==a[l-1] :
-                l=l+1
-     
-            # skip duplicates for right
-            while l<r and a[r]==a[r-1]:
-                    r=r-1
+                l+=1
+                r-=1
 
-          if two_sum<-a[i]:
-              l=l+1
-          else:
-              r=r-1
-    print(c)
+                while l<r and a[l]==a[l-1]:
+                    l+=1
+                
+                while l<r and a[r]==a[r+1]:
+                    r-=1
+            elif total<target:
+                l+=1
+            else:
+                r-=1
+        
+    return result
 
-three_sum(arr=[-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6],target=0)
-
-# [-4, -2, -2, -2,][ 0, 1, 2, 2, ][2, 3, 3, 4,][ 4, 6, 6]
-
+print(three_sum(nums= [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6],target=0))

@@ -31,8 +31,7 @@ def cons_seq(list1: list) -> int:
     
     return max_consecutive_length
 
-# cons_seq(list1=[1, 2, 2, 3]
-# )
+cons_seq(list1=[1, 2, 2, 3])
 
 def cons_seq_1(list1:list)->int: #o(n)
 

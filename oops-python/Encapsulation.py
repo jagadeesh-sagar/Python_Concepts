@@ -1,6 +1,8 @@
 # Encapsulation
 # it provides high level of abstraction by hiding the internal implementation using methods by only providing the method names to users
 
+# Encapsulation is the process of hiding an object's internal state and allowing controlled access to it through methods or properties.
+
 class BankAccount:
     def __init__(self):
       self._balance=0.0

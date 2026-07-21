@@ -51,7 +51,7 @@ account.deposit(200)
 throws error ->Private methods don’t throw errors due to access restriction.
 They raise AttributeError because Python renames them using name mangling.(no explict methods in python)
 
-account._BankAccount__log_transaction('deposit',129) # its correct by the way 
+account._BankAccount__log_transaction('deposit',129) # its correct by the way but not recommended
 
 '''
 

@@ -37,7 +37,7 @@ def Boyer_Moore_Majority_Vote_Algorithm(list1): # 0(n)  and o(1)
     print(candidate)
 
 
-# Boyer_Moore_Majority_Vote_Algorithm(list1=[3,2,3])
+Boyer_Moore_Majority_Vote_Algorithm(list1=[3,2,3])
 
 
 '''
@@ -75,20 +75,18 @@ def zero_product(list1: list[int]):    # works with zeros too
    suffix_product=1
    prefix_product=1
 
-
    n=len(list1)
    result=[1]*n
 
    for i in range(n):
       result[i]=prefix_product
       prefix_product=prefix_product*list1[i]
+   #[1,1,2,6]
 
    for i in range(n-1,-1,-1):
-     
       result[i]=result[i]*suffix_product 
-      suffix_product=suffix_product*list1[i]   
-
+      suffix_product=suffix_product*list1[i]  
+   #[24, 12, 8, 6]
    print(result)
 
-
-zero_product(list1=[1,2,3,0])
+zero_product(list1=[1,2,3,4])

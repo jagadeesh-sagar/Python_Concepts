@@ -74,3 +74,20 @@ for vehicle in vehicles:
 
 #    else:
 #      raise Exception('Object is invalid ')
+
+
+'''
+
+Polymorphism is the ability of different objects to respond to the same method call in their own way. 
+It allows one interface to represent many different forms.
+'''
+
+'''
+Example 3: Built-in Polymorphism
+
+The same function works on different types.
+
+print(len("hello"))
+print(len([1, 2, 3]))
+print(len((10, 20, 30, 40)))
+'''

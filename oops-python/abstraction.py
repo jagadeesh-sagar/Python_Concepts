@@ -12,7 +12,7 @@ class EmailSerivce:
 
     def send_email(self):
        self._connect()
-       self._authenticate()  # if user sends an email he will never know that this many things happening behind the scenes
+       self._authenticate()  # if devloper uses a email logic he will never know that this many things happening behind the scenes
        print('Sending email')
        self._disconncet()
     

@@ -68,3 +68,17 @@ def string_rotation_3(s1:str,s2:str)->bool:
     return s2 in (s1+s1)
 
 print(string_rotation_3(s1='',s2=''))
+
+def string_rotation(s1:str,s2:str)->bool:
+
+    c='jaggu'
+    name=''
+
+    for i in range(len(s1)):
+        name=s1[i::]+s1[:i]
+
+        if name==s2:
+            return True
+
+    return False
+print(string_rotation(s1='waterbottle',s2='erbottlewat'))
