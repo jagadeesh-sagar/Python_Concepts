@@ -94,7 +94,7 @@ Output: [1,1,0]
 
     for i in range(len(temperatures)):
 
-        if mono_stack or temperatures[mono_stack[-1]]>temperatures[i]:
+        if not mono_stack or temperatures[mono_stack[-1]]>temperatures[i]:
             mono_stack.append(i)
         else:
             while mono_stack and temperatures[mono_stack[-1]]<temperatures[i]:
@@ -309,7 +309,7 @@ class MyQueue_2:
         if len(self.queue2)==0:
             # self.queue2=self.queue1[::-1]
             while(len(self.queue1)!=0):
-              self.append(self.queue1.pop())
+              self.queue2.append(self.queue1.pop())
 
         return self.queue2.pop()     
 
@@ -333,4 +333,6 @@ obj.pop()
 
 # param_3 = obj.peek()
 # param_4 = obj.empty()
+
+
 

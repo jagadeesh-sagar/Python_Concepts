@@ -131,3 +131,80 @@ print(longestOnes(nums= [1,1,1,0,0,0,1,1,1,1,0],k=2))
 
         # print(f'flips:{flips} ,maxflips:{max_flips},right:{right} ,left:{left}')
         # print(left,right,z,'windows:',windows_size)
+
+
+'''
+1234. Replace the Substring for Balanced String
+
+You are given a string s of length n containing only four kinds of characters: 'Q', 'W', 'E', and 'R'.
+A string is said to be balanced if each of its characters appears n / 4 times where n is the length of the string.
+Return the minimum length of the substring that can be replaced with any other string of the same length to make s balanced. If s is already balanced, return 0.
+
+ 
+
+Example 1:
+
+Input: s = "QWER"
+Output: 0
+Explanation: s is already balanced.
+Example 2:
+
+Input: s = "QQWE"
+Output: 1
+Explanation: We need to replace a 'Q' to 'R', so that "RQWE" (or "QRWE") is balanced.
+Example 3:
+
+Input: s = "QQQW"
+Output: 2
+Explanation: We can replace the first "QQ" to "ER". 
+
+'''
+# QWERQWQQ
+
+def balancedString(s: str) -> int:
+    from collections import Counter
+
+    count=Counter(s)
+    n=len(s)
+
+    target=n//4
+
+    if all(count[ch]==target for ch in "QWER"):return 0
+
+    left=0
+    ans=n
+
+    for right in range(n):
+        count[s[right]]-=1 # char entering window decrease the freq of it 
+
+        while(count['Q']<=target and
+              count['W']<=target and
+              count['E']<=target and
+              count['R']<=target 
+              ):
+            
+            ans=min(ans,right-left+1)
+            # print(left)
+            count[s[left]]+=1 # char leaving thr window so increase the freq of it 
+            left+=1
+    return ans
+
+'''
+the main idea here is that find the substring that we have to change .
+for that use sliding window :
+1. Increase the window 
+2. If the window is subtracted from the main string if all "QWER" in the remainig string obeys the target value 
+then it is valid window substring that has to be replaced
+
+3.remember the length of substring 
+4. Shrink the window and find explore to find new window
+
+'''
+
+
+print(balancedString("QWER"))       # 0
+print(balancedString("QQWE"))       # 1
+print(balancedString("QQQW"))       # 2
+print(balancedString("QQQQ"))       # 3
+print(balancedString("QQQQWERR"))   # 2
+print(balancedString("WQWRQQQW"))   # 3

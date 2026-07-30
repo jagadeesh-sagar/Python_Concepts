@@ -3,20 +3,24 @@ Find pair with given difference - Find two numbers with difference k
 
 '''
 
-def k_difference(list1:list,k:int)->bool:
-    if k==0 and len(list1)==len(set(list1)) or len(list1)<2:
-        return False
-    elif k==0:
-        return True
-    
-    seen=set(list1)  # used set() otherwise with if-conditon it will o(n2) now o(n)
+def k_difference(nums:list,k:int)->bool:
+    from collections import Counter
+    d1=Counter(nums)
 
-    for num in list1:
+    count=0
+
+    for num in d1:
         s=num+k
 
-        if s in seen:
-            print(num,s)
+        if s in d1 :
+            if k!=0:
+                count+=1
+            elif d1[num]>1:
+                count+=1
 
-print(k_difference(list1=[8, 12, 16, 4, 0, 20],k=4))
+    return count
+
+
+print(k_difference(nums=[8, 12, 16, 4, 0, 20],k=4))
 
 
