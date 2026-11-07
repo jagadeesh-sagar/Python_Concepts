@@ -30,7 +30,7 @@ def sum_combination(nums:list[int],n:int)->list[list[int]]:
     backtracking(0,[])
     return result
 
-print(sum_combination(nums=[2,3,6,7],n=7))
+# print(sum_combination(nums=[2,3,6,7],n=7))
 
 
 
@@ -66,6 +66,3 @@ def sum_combination(nums: list[int], target: int):
     backtrack(0, target)
 
     return result
-
-
-print(sum_combination([2,3,6,7], 7))

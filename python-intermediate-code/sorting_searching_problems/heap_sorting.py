@@ -55,9 +55,9 @@ def heapSort(A: list[int]):
     for i in range(n//2,-1,-1):
         maxHeapify(A,n,i)
 
-    for i in range(n-1, 0, -1):  # 2 code
-        A[0], A[i] = A[i], A[0]
-        maxHeapify(A, i - 1, 0)
+    # for i in range(n-1, 0, -1):  # 2 code
+    #     A[0], A[i] = A[i], A[0]
+    #     maxHeapify(A, i - 1, 0)
 
 
 A=[4, 10, 3, 5, 1]

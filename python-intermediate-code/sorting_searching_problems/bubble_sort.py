@@ -14,7 +14,7 @@ def bubble_sort(arr):
     for i in range(n):
         for j in range(n-i):
             if arr[j]>arr[j+1]:
-                arr[j],arr[j+1]=arr[j+1],arr[j]
+                arr[j],arr[j+1]=arr[j+1],arr[j] # swap them
     return arr
 
 print(bubble_sort(arr=[2,13,4,3,55,2,341,23,333]))

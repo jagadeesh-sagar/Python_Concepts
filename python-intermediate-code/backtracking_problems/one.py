@@ -85,7 +85,7 @@ def valid_parentheses(n:int):
             result.append(current)
             return 
 
-        if opend <n:
+        if opend < n:
             backtrack(current+'(',opend+1,closed)
         
         if closed < opend:
