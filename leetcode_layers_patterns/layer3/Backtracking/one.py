@@ -30,7 +30,7 @@ def subsets(nums: list[int]) -> list[list[int]]:
     backtracking(0)
     return result
 
-print(subsets(nums=[1,2,3]))
+# print(subsets(nums=[1,2,3]))
 
 '''
 46. Permutations
@@ -55,21 +55,28 @@ def permute(nums:list[int]) -> list[list[int]]:
 
     result=[]
     current=[]
+    visited=len(nums)*[False]
 
-    def backtracking(start):
+    def backtracking(current):
+
         if len(current)==len(nums):
-            result.append(current[:])
-        print('hi',current,start)
-        for i in range(start,len(nums)):
+            result.append(current.copy())
+            return
+
+        for i in range(len(nums)):
+            if visited[i]:
+                continue
+
+            visited[i]=True
+
             current.append(nums[i])
-            backtracking(i+1)
-            # current.pop()
-            
-        # start-=1
+            backtracking(current)
+            current.pop()
+            visited[i]=False
+ 
+    backtracking(current)
 
-    backtracking(0)
-
-    return result
+    return result,visited
 
 
 print(permute(nums=[1,2,3]))
